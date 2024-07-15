@@ -1,0 +1,13 @@
+build/
+
+.idea/**
+.idea/misc.xml
+
+out/
+
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+BlackJack.iml
