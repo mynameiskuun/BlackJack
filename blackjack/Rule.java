@@ -1,10 +1,17 @@
 package blackjack;
 
+import java.util.Collections;
+
 public class Rule {
 
     public void gameStart() {
 
     }
+
+    public boolean hasMoreThan16(Dealer dealer) {
+        return true;
+    }
+
     public boolean hasMoreThan21(Player player) {
 
         return true;

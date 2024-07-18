@@ -1,20 +1,13 @@
 package blackjack;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class Player {
+public interface Player {
 
-    private ArrayList<Card> cards;
-    public Card draw() {
+    Card draw();
 
-        return new Card(" ", 2);
-    }
+    void openCards();
 
-    public void openCards() {
-
-    }
-
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
+    LinkedList<Card> getCards();
 }

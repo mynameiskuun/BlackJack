@@ -2,13 +2,17 @@ package blackjack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
 
 public class BlackJackApplication {
 
     public static void main(String[] args) {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Rule rule = new Rule();
+        CardDeck cardDeck = new CardDeck();
 
+        rule.gameStart();
         System.out.println("######### BLACK JACK GAME START #########");
 
         // 카드 섞기

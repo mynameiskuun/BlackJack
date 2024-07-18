@@ -1,33 +1,36 @@
 package blackjack;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class CardDeck {
 
-    public static int NUMBER_OF_CARDS = 52;
-    public static int CARDS_PER_SYMBOLS = 13;
-    public static String[] CARDS_SYMBOLS = {"SPADE", "DIAMOND", "HEART", "CLOVER"};
-    private LinkedList<Card> cards;
+    public static final int NUMBER_OF_CARDS = 52;
+    public static final int CARDS_PER_SYMBOLS = 13;
+    public static final String[] CARDS_SYMBOLS = {"SPADE", "DIAMOND", "HEART", "CLOVER"};
+    public static LinkedList<Card> cards;
 
-    public CardDeck() {
-        for(int i=0; i<CARDS_PER_SYMBOLS; i++) {
+    public Card drawCard() {
+        return cards.getFirst();
+    }
+
+    public void initialize() {
+        this.cards = new LinkedList<>();
+
+        for(int i=1; i<=CARDS_PER_SYMBOLS; i++) {
             for (String symbols : CARDS_SYMBOLS) {
                 Card card = new Card(symbols, i);
                 this.cards.add(card);
             }
         }
+        shuffle();
     }
-    public LinkedList<CardDeck> shuffle() {
+    public LinkedList<Card> shuffle() {
 
         LinkedList<Card> cards = this.cards;
-        Random random = new Random();
-
-        for(int i=0; i<cards.size(); i++) {
-
-        }
-
-        return new LinkedList<>();
+        Collections.shuffle(cards);
+        return cards;
     }
 
     public LinkedList<Card> getCards() {

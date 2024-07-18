@@ -1,9 +1,21 @@
 package blackjack;
 
-public class Dealer extends Player{
+import java.util.LinkedList;
 
-    public boolean hasMoreThan16() {
+public class Dealer implements Player{
 
-        return true;
+    @Override
+    public Card draw() {
+        return null;
+    }
+
+    @Override
+    public void openCards() {
+
+    }
+
+    @Override
+    public LinkedList<Card> getCards() {
+        return null;
     }
 }
