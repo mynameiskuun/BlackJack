@@ -1,13 +1,8 @@
 package blackjack;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 public interface Player {
 
-    Card draw();
+    void hit();
 
-    void openCards();
-
-    LinkedList<Card> getCards();
+    int calculateCardValue();
 }

@@ -6,34 +6,30 @@ import java.util.Random;
 
 public class CardDeck {
 
-    public static final int NUMBER_OF_CARDS = 52;
-    public static final int CARDS_PER_SYMBOLS = 13;
-    public static final String[] CARDS_SYMBOLS = {"SPADE", "DIAMOND", "HEART", "CLOVER"};
-    public static LinkedList<Card> cards;
+    private static final int NUMBER_OF_CARDS = 52;
+    private static final String[] CARDS_NAMES = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "K", "Q", "J"};
+    private static final String[] CARDS_SYMBOLS = {"SPADE", "DIAMOND", "HEART", "CLOVER"};
+    public static final LinkedList<Card> CARDS = new LinkedList<>();
 
-    public Card drawCard() {
-        return cards.getFirst();
+    public CardDeck() {
+        initialize();
     }
 
-    public void initialize() {
-        this.cards = new LinkedList<>();
-
-        for(int i=1; i<=CARDS_PER_SYMBOLS; i++) {
+    private void initialize() {
+        for(int i=0; i<CARDS_NAMES.length; i++) {
             for (String symbols : CARDS_SYMBOLS) {
-                Card card = new Card(symbols, i);
-                this.cards.add(card);
+                Card card = new Card(symbols, CARDS_NAMES[i]);
+                this.CARDS.add(card);
             }
         }
-        shuffle();
+        if(CARDS.size() == NUMBER_OF_CARDS) {
+            this.shuffle();
+        }
     }
-    public LinkedList<Card> shuffle() {
 
-        LinkedList<Card> cards = this.cards;
+    private void shuffle() {
+
+        LinkedList<Card> cards = this.CARDS;
         Collections.shuffle(cards);
-        return cards;
-    }
-
-    public LinkedList<Card> getCards() {
-        return cards;
     }
 }
